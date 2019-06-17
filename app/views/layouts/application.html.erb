@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- stylesheet_link_tag helper takes path string and hash options argument.
+      This embedded ruby is evaluated and inserted into the HTML - can see on page src. -->
+    <%= stylesheet_link_tag('application', { media: 'all', 'data-turbolinks-track': 'reload'}) %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
