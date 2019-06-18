@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>
+    <%= full_title(yield(:title)) %>
+  </title>
+  <%= render 'layouts/rails_default' %>
+  <%= render 'layouts/shim' %>
+</head>
 
-    <!-- stylesheet_link_tag helper takes path string and hash options argument.
-      This embedded ruby is evaluated and inserted into the HTML - can see on page src. -->
-    <%= stylesheet_link_tag('application', { media: 'all', 'data-turbolinks-track': 'reload'}) %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
     <%= yield %>
-  </body>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
 </html>
